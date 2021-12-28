@@ -61,7 +61,7 @@ def monteVsActual(rad, pts, step, ptsIgnore = 1, avgOver = None, avg = False):
     ptsRange = list(range(ptsIgnore, pts, step))
     tic = time.time()
 
-    if avg == False:
+    if not avg:
         for i in ptsRange:
             pis.append(findPi(rad, i))
     else:
