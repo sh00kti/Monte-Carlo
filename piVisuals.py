@@ -56,12 +56,12 @@ def findPi(rad, pts):
     pi = (4*inside) / pts
     return pi
 
-def monteVsActual(rad, pts, step, ptsIgnore = 1, avgOver = None, avg = False):
+def monteVsActual(rad, pts, step, ptsIgnore = 1, avgOver = False):
     pis = []
     ptsRange = list(range(ptsIgnore, pts, step))
     tic = time.time()
 
-    if not avg:
+    if not avgOver:
         for i in ptsRange:
             pis.append(findPi(rad, i))
     else:
